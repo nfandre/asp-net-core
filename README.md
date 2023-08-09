@@ -18,4 +18,34 @@
  dotnet ef database update
 
 
+### Project (Artist, Albums & Songs)
+Tables:
 
+| Artists |      
+| ------- |
+| Id |
+| Name |
+| Gender |
+| ImageUrl |
+- Relation: 1 Artist -> M Song /// 1 Artitst -> M Album
+
+| Songs |
+| ------- |
+| Id |
+| Title |
+| Duration |
+| UploadedDate |
+| IsFeatured |
+| ImageUrl |
+| AudioUrl |
+| ArtistId(FK) |
+| AlbumId(FK) |
+- Relation: M Song -> 1 Album /// M Song -> Artist
+
+| Albums |
+| ------- |
+| Id |
+| Name |
+| ImageUrl |
+| ArtistId(FK) |
+- Relation: M Albuns -> 1 Artist
