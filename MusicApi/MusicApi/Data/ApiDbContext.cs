@@ -25,7 +25,8 @@ namespace MusicApi.Data
 				{
 					Id = 1,
 					Title = "Yellow",
-					Language = "English"
+					Language = "English",
+					Duration = "4:20"
 				}
 			);
         }

@@ -41,6 +41,13 @@ namespace MusicApi.Controllers
             return Ok(song);
         }
 
+        // api/songs/test/id
+        [HttpGet("[action]/{id}")]
+        public int  Test(int id)
+        {
+            return id;
+        }
+
         //// POST api/values
         //[HttpPost]
         //public async Task<IActionResult> Post([FromBody] Song song)
