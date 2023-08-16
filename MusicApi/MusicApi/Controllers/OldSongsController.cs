@@ -11,12 +11,12 @@ using MusicApi.Models;
 namespace MusicApi.Controllers
 {
     [Route("api/[controller]")]
-    public class SongsController : Controller
+    public class OldSongsController : Controller
     {
 
         private ApiDbContext _dbContext;
 
-        public SongsController(ApiDbContext dbContext) {
+        public OldSongsController(ApiDbContext dbContext) {
             _dbContext = dbContext;
         }
         // GET: api/values

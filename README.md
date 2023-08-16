@@ -19,7 +19,7 @@
 
 
 ### Project (Artist, Albums & Songs)
-Tables:
+#### Tables:
 
 | Artists |      
 | ------- |
@@ -49,3 +49,10 @@ Tables:
 | ImageUrl |
 | ArtistId(FK) |
 - Relation: M Albuns -> 1 Artist
+#### tables
+![Screenshot](./images/table-designer.png)
+
+#### Controllers
+![Screenshot](./images/controller-designer.png)
+
+

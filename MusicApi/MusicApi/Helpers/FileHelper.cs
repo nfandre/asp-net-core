@@ -9,7 +9,7 @@ namespace MusicApi.Helpers
 	{
 		public static async Task<string> UploadImage(IFormFile file )
 		{
-            string connectionString = @"DefaultEndpointsProtocol=https;AccountName=musicstoragenfandre;AccountKey=p0OM2gMFTG0DyscO9SZHy66iqFDTA/hp4V6sRva67AIMI3l1rZjokwZv1B1v0ElRl4MFq8/vPQu/+AStI53zkg==;EndpointSuffix=core.windows.net";
+            string connectionString = @"DefaultEndpointsProtocol=https;AccountName=musicappalbums;AccountKey=ZrymHHfdQMDAdT3poEN/N6GMBQ0TNczQxmeDrXCaldawQJHSHqbS7Z9rdCoWACIXmonyIHu7bj7j+AStEF2qNg==;EndpointSuffix=core.windows.net";
             string containerName = "songcontainer";
 
             BlobContainerClient blobContainerClient = new BlobContainerClient(connectionString, containerName);
@@ -22,6 +22,22 @@ namespace MusicApi.Helpers
 
             return blobClient.Uri.AbsoluteUri;
         }
-	}
+
+        public static async Task<string> UploadAudio(IFormFile file)
+        {
+            string connectionString = @"DefaultEndpointsProtocol=https;AccountName=musicappalbums;AccountKey=ZrymHHfdQMDAdT3poEN/N6GMBQ0TNczQxmeDrXCaldawQJHSHqbS7Z9rdCoWACIXmonyIHu7bj7j+AStEF2qNg==;EndpointSuffix=core.windows.net";
+            string containerName = "audiocontainer";
+
+            BlobContainerClient blobContainerClient = new BlobContainerClient(connectionString, containerName);
+
+            BlobClient blobClient = blobContainerClient.GetBlobClient(file.FileName);
+            var memoryStream = new MemoryStream();
+            await file.CopyToAsync(memoryStream);
+            memoryStream.Position = 0;
+            await blobClient.UploadAsync(memoryStream);
+
+            return blobClient.Uri.AbsoluteUri;
+        }
+    }
 }
 
