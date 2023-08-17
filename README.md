@@ -51,7 +51,7 @@
         ```
 - URL Path
 - Media Types
-
+- Technical Documentation (Swagger)
 
 
 ### Commands
