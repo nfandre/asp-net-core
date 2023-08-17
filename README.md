@@ -13,8 +13,12 @@
     - Query String
       > services.AddApiVersioning();
       ```csharp
-        namespace teste {
-            public class Controller
+        namespace QueryStringController 
+        {
+            // api/query?api-version=1.0
+            [ApiVersion("1.0)]
+            [Route("api/query")]
+            public class QueryController
             {
             }
         }
