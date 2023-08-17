@@ -13,19 +13,42 @@
     - Query String
       > services.AddApiVersioning();
       ```csharp
-        namespace QueryStringController 
+        namespace VersionController 
         {
-            // api/query?api-version=1.0
+            // api/version?api-version=1.0
             [ApiVersion("1.0)]
             [Route("api/query")]
-            public class QueryController
+            public class VersionController
             {
             }
         }
       ```
-      
-    
-
+    - URL Path
+      ```csharp
+          namespace VersionController
+          {
+              // api/v1/version
+              [ApiVersion("1.0)]
+              [Route("api/v{version:apiVersion}/query")]
+              public class VersionController
+              {
+              }
+          }
+      ```
+    - Media Type
+      > services.AddApiVersioning(o=> o.ApiVersionReader = new MediaTypeVersionReader());
+        ```csharp
+            namespace VersionController
+            {
+                // Header: Accept | application/json;v=1.0
+                // api/v1/version
+                [ApiVersion("1.0)]
+                [Route("api/v{version:apiVersion}/query")]
+                public class VersionController
+                {
+                }
+            }
+        ```
 - URL Path
 - Media Types
 
