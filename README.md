@@ -52,6 +52,7 @@
 - URL Path
 - Media Types
 - Technical Documentation (Swagger)
+> Swashbucle.AspNetCore.Swagger
 
 
 ### Commands
