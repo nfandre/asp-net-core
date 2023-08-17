@@ -9,6 +9,23 @@
 - Content Negotiation & Migrations
 - File Uploading Azure Blob Storage
 - Validations & Routings
+- Versioniing ( AspNetCore.Mvc.Versioning)
+    - Query String
+      > services.AddApiVersioning();
+      ```csharp
+        namespace teste {
+            public class Controller
+            {
+            }
+        }
+      ```
+      
+    
+
+- URL Path
+- Media Types
+
+
 
 ### Commands
  dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
